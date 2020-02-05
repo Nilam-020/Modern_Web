@@ -1,0 +1,16 @@
+/*@font-face*/
+
+@font-face {
+    font-family: "OpenSans";
+    src: url(../Fonts/Open\ Sans/OpenSans.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "Orenburg";
+    src: url(../Fonts/orenburg/Orenburg-Bold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "belgardo";
+    src: url(../fonts/belgrado/Belgrado.ttf) format(truetype);
+}

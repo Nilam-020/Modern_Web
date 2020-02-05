@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b449c164-dd42-46fe-a471-79b3e775e482" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1X7Qh4L761hxx37qhduPHiIiQVk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web\static\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web\static\css" />
+      <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b449c164-dd42-46fe-a471-79b3e775e482" name="Default Changelist" comment="" />
+      <created>1580394768443</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580394768443</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="434" y="32" key="CommitChangelistDialog2" timestamp="1580822712707">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="434" y="32" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1580822712707" />
+    <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1580793504001">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1580793504001" />
+    <state x="639" y="332" width="259" height="200" key="Github.ShareDialog" timestamp="1580782624136">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="639" y="332" width="259" height="200" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1580782624136" />
+    <state x="553" y="0" key="SettingsEditor" timestamp="1580822693599">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="553" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1580822693599" />
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1580394783378">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="470" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1580394783378" />
+  </component>
+</project>
