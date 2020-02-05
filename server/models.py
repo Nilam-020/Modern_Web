@@ -35,3 +35,46 @@ class Portfolio(models.Model):
     portfolioDesc = models.CharField(max_length=255)
     portfolioPara = models.CharField(max_length=255)
 
+class Tools(models.Model):
+    toolname = models.CharField(max_length=100)
+    toollist = models.IntegerField(3)
+    toolvalue = models.IntegerField(3)
+
+class Services(models.Model):
+    icon = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    desc = models.TextField()
+
+class OurTeam(models.Model):
+    pic = models.FileField(upload_to='pics')
+    title = models.CharField(max_length=100)
+    rank = models.CharField(max_length=100)
+    desc = models.TextField()
+    facebook = models.TextField()
+    twitter = models.TextField()
+    insta = models.TextField()
+
+
+class testimonial(models.Model):
+    pic = models.FileField(upload_to='pics')
+    title = models.CharField(max_length=50)
+    rank = models.CharField(max_length=100)
+    star1 = models.BooleanField()
+    star2 = models.BooleanField()
+    star3 = models.BooleanField()
+    star4 = models.BooleanField()
+    star5 = models.BooleanField()
+    desc =models.TextField()
+
+class blog(models.Model):
+    subject = models.CharField(max_length=50)
+    writer = models.CharField(max_length=100)
+    view = models.CharField(max_length=5)
+    date = models.DateField()
+    pic = models.FileField(upload_to='pics')
+    title = models.CharField(max_length=255)
+    desc = models.TextField()
+    link = models.TextField()
+
+
+
