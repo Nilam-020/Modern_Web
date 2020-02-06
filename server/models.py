@@ -76,5 +76,16 @@ class blog(models.Model):
     desc = models.TextField()
     link = models.TextField()
 
-
-
+class blog_detailsdesc(models.Model):
+    topic =models.CharField(max_length=100)
+    author =models.CharField(max_length=100)
+    facebook = models.TextField()
+    twitter = models.TextField()
+    github = models.TextField()
+    linkedin = models.TextField()
+    bannerimg = models.FileField(upload_to='pics')
+    bodyhead = models.TextField()
+    quote = models.TextField()
+    imgright = models.FileField(upload_to='pics')
+    imgleft = models.FileField(upload_to='pics')
+    bodyfoot = models.TextField()

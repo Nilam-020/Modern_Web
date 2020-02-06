@@ -1,8 +1,11 @@
+from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import CommentForm, Portfolio, ContactForm, Newsletter, About, testimonial, Tools, Services, OurTeam
+from .models import CommentForm, Portfolio, ContactForm, Newsletter, About, testimonial, Tools, Services, OurTeam, \
+    blog_detailsdesc
 from django.core.files.storage import FileSystemStorage
 
 
@@ -51,8 +54,49 @@ def blog_details(request):
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect("../dashboard/")
+        else:
+            messages.info(request, 'invalid Credential')
+            return redirect('login/')
+
+    else:
+        return render(request, 'login.html')
 
 
+def logout(request):
+    auth.logout(request)
+    return redirect('../')
+
+
+@login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    if request.method == "POST":
+        topic1 = request.POST['topic']
+        author1 = request.POST['author']
+        facebook1 = request.POST['facebook']
+        twitter1 = request.POST['twitter']
+        github1 = request.POST['github']
+        linkedin1 = request.POST['linkedin']
+        bannerimg1 = request.POST['bannerimg']
+        bodyhead1 = request.POST['bodyhead']
+        quote1 = request.POST['quote']
+        imgright1 = request.POST['imgright']
+        imgleft1 = request.POST['imgleft']
+        bodyfoot1 = request.POST['bodyfoot']
+
+        blogdesc = blog_detailsdesc(topic=topic1, author=author1, facebook=facebook1,
+                                    twitter=twitter1, github=github1, linkedin=linkedin1, bannerimg=bannerimg1,
+                                    bodyhead=bodyhead1, quote=quote1, imgright=imgright1, imgleft=imgleft1,
+                                    bodyfoot=bodyfoot1)
+        blogdesc.save()
+
+    blogdet = blog_detailsdesc.objects.all()
+    return render(request, 'dashboard.html',{'blogdet': blogdet})

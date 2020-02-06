@@ -48,12 +48,14 @@
                     <a class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item dropdown">
+                    {% if user.is_authenticated %}
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Welcome
-                        <i class="fas fa-user pr-2"></i>My Account
+                        <i class="fas fa-user pr-2"></i>{{user.username}}
                     </a>
+                    {% endif %}
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#"><i class="fas fa-user 2x"></i> &nbsp;Profile</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                        <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                     </div>
                 </li>
             </ul>
@@ -104,106 +106,88 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="dashboard" method="post">
-
+                        <form method="post">
+                            {% csrf_token %}
                                 <div class="form-group row">
                                 <label for="topic" class="col-sm-2 col-form-label">Topic</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="topic">
+                                    <input type="text" class="form-control" id="topic" name="topic">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="author" class="col-sm-2 col-form-label">Author</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="author">
+                                    <input type="text" class="form-control" id="author" name="author">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="facebook" class="col-sm-2 col-form-label">facebook link</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="facebook">
+                                    <input type="text" class="form-control" id="facebook" name="facebook">
                                 </div>
                             </div>
                              <div class="form-group row">
-                                <label for="insta" class="col-sm-2 col-form-label">insta link</label>
+                                <label for="tweet" class="col-sm-2 col-form-label">twitter link</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="insta">
+                                    <input type="text" class="form-control" id="tweet" name="twitter">
                                 </div>
                             </div>
                              <div class="form-group row">
                                 <label for="github" class="col-sm-2 col-form-label">github link</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="github">
+                                    <input type="text" class="form-control" id="github" name="github">
                                 </div>
                             </div>
                              <div class="form-group row">
                                 <label for="link" class="col-sm-2 col-form-label">linkedin link</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="link">
+                                    <input type="text" class="form-control" id="link" name="linkedin">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="staticUpload" class="col-sm-4">Upload Image</label>
                                 <div class="col-sm-8">
-                                    <input type="file" class="form-control-file" id="staticUpload">
+                                    <input type="file" class="form-control-file" id="staticUpload" name="bannerimg">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="title" class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="title">
+                                    <input type="text" class="form-control" id="title" name="title">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="body" class="col-sm-2 col-form-label">Body 1</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" col="3" id="body">
-                                </div>
-                            </div>
-                        <div class="form-group row">
-                                <label for="body2" class="col-sm-2 col-form-label">Body 2</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="body2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="Body3" class="col-sm-2 col-form-label">Body 3</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Body3">
+                                    <input type="text" class="form-control" id="body" name="bodyhead">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="boxed" class="col-sm-2 col-form-label">Boxed Text</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="boxed">
+                                    <input type="text" class="form-control" id="boxed" name="quote">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="staticUpload2" class="col-sm-4">Upload Image 1</label>
                                 <div class="col-sm-8">
-                                    <input type="file" class="form-control-file" id="staticUpload2">
+                                    <input type="file" class="form-control-file" id="staticUpload2" name="imgright">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="staticUpload3" class="col-sm-4">Upload Image 2</label>
                                 <div class="col-sm-8">
-                                    <input type="file" class="form-control-file" id="staticUpload3">
+                                    <input type="file" class="form-control-file" id="staticUpload3" name="imgleft">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="Body4" class="col-sm-2 col-form-label">Body 4</label>
+                                <label for="Body2" class="col-sm-2 col-form-label">Body 2</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Body4">
+                                    <input type="text" class="form-control" id="Body2" name="bodyfoot">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="Body5" class="col-sm-2 col-form-label">Body 5</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Body5">
-                                </div>
-                            </div>
-                             <button type="submit" class="btn btn-primary">Cancel</button>
+                             <button type="cancel" class="btn btn-primary">Cancel</button>
                              <button type="submit" class="btn btn-primary">Save</button>
                         </form>
                     </div>
@@ -212,6 +196,62 @@
 
         </div>
         </div>
+
+<div class="container-fluid">
+        <div class="row">
+    <div class="col-lg-12">
+        <div class="heading mb-5">
+            <h1>blogs</h1>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Author</th>
+                <th>Published Date</th>
+                <th>Facebook link</th>
+                <th>Twitter link</th>
+                <th>github link</th>
+                <th>linkedin link</th>
+                <th>Title</th>
+                <th>Heading</th>
+                <th>Body 1</th>
+                <th>Boxed Text</th>
+                <th>Image 1</th>
+                <th>Image 2</th>
+                <th>Body 2</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for bd in blogdet %}
+            <tr>
+                <td>{{ bd.topic }}</td>
+                <td>{{ bd.author }}</td>
+                <td>{{ bd.facebook }}</td>
+                <td>{{ bd.twitter }}</td>
+                <td>{{ bd.github }}</td>
+                <td>{{ bd.linkedin }}</td>
+                <td>{{ bd.bannerimg }}</td>
+                <td>{{ bd.bodyhead }}</td>
+                <td>{{ bd.quote }}</td>
+                <td>{{ bd.imgright }}</td>
+                <td>{{ bd.imgleft }}</td>
+                <td>{{ bd.bodyfoot }}</td>
+
+                <td>
+                    <button type="submit" class="btn btn-primary">Update</button>
+
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-primary">Delete</button>
+
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
     </div>
 
 
