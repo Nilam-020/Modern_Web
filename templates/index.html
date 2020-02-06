@@ -136,84 +136,36 @@
                         <div class="heading-underline"></div>
                     </div>
                     <!--                    can apply loop here for progress bar-->
-                    <div class="col-md-6 col-sm-12">
-                        <div class="skill mt-4 mb-4">
-                            <h6>Photoshop
-                                <span class="float-right">40%</span>
-                            </h6>
+<!--                    <div class="col-md-6 col-sm-12">-->
+<!--                        <div class="skill mt-4 mb-4">-->
+<!--                            <h6>Photoshop-->
+<!--                                <span class="float-right">40%</span>-->
+<!--                            </h6>-->
 
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--                    end  apply apply loop here for progress bar-->
-                    <div class="col-md-6 col-sm-12">
-                        <div class="skill mt-4 mb-4">
-                            <h6>HTML
-                                <span class="float-right">80%</span>
-                            </h6>
+<!--                            <div class="progress">-->
+<!--                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
+                    {% for skill in toolsbar %}
                     <div class="col-md-6 col-sm-12">
                         <div class="skill mt-4 mb-4">
-                            <h6>CSS
-                                <span class="float-right">85%</span>
+                            <h6>{{skill.toolname}}
+                                <span class="float-right">{{skill.toollist}}%</span>
                             </h6>
 
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow={{skill.toolvalue}} aria-valuemin="0" aria-valuemax="100" style="width:85%">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="skill mt-4 mb-4">
-                            <h6>Bootstrap
-                                <span class="float-right">90%</span>
-                            </h6>
-
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="skill mt-4 mb-4">
-                            <h6>Adobe Xd
-                                <span class="float-right">60%</span>
-                            </h6>
-
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="skill mt-4 mb-4">
-                            <h6>Python
-                                <span class="float-right">55%</span>
-                            </h6>
-
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:55%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+            </div>
             </div>
         </section>
         <!-- =======================about section ends======================================= -->
@@ -233,81 +185,20 @@
                         </div>
                     </div>
                     <div class="row">
+                        {% for service in clientservices %}
                         <div class="col-lg-4">
                             <div class="services-box p-5 bg-white mt-4">
                                 <div class="services-icon mb-3">
-                                    <i class="fab fa-html5 h3 text-custom"></i>
+                                    <i class="{{service.icon}} h3 text-custom"></i>
                                 </div>
                                 <div class="services-desc">
-                                    <h5>HTML</h5>
+                                    <h5>{{service.title}}</h5>
                                     <p class="mb-0 text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat pariatur iure dicta harum minus quo distinctio cum iste? </p>
+                                        {{service.desc}} </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="services-box p-5 bg-white mt-4">
-                                <div class="services-icon mb-3">
-                                    <i class="fab fa-css3-alt h3 text-custom"></i>
-                                </div>
-                                <div class="services-desc">
-                                    <h5>CSS</h5>
-                                    <p class="mb-0 text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat pariatur iure dicta harum minus quo distinctio cum iste? </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="services-box p-5 bg-white mt-4">
-                                <div class="services-icon mb-3">
-                                    <i class="fab fa-python h3 text-custom"></i>
-                                </div>
-                                <div class="services-desc">
-                                    <h5>Python</h5>
-                                    <p class="mb-0 text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat pariatur iure dicta harum minus quo distinctio cum iste? </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="services-box p-5 bg-white mt-4">
-                                <div class="services-icon mb-3">
-                                    <i class="fab fa-bootstrap h3 text-custom"></i>
-                                </div>
-                                <div class="services-desc">
-                                    <h5>Bootstrap</h5>
-                                    <p class="mb-0 text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat pariatur iure dicta harum minus quo distinctio cum iste? </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="services-box p-5 bg-white mt-4">
-                                <div class="services-icon mb-3">
-                                    <i class="fas fa-database h3 text-custom"></i>
-                                </div>
-                                <div class="services-desc">
-                                    <h5>Database</h5>
-                                    <p class="mb-0 text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat pariatur iure dicta harum minus quo distinctio cum iste? </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="services-box p-5 bg-white mt-4">
-                                <div class="services-icon mb-3">
-                                    <i class="fab fa-adobe h3 text-custom"></i>
-                                </div>
-                                <div class="services-desc">
-                                    <h5>UI Design</h5>
-                                    <p class="mb-0 text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat pariatur iure dicta harum minus quo distinctio cum iste? </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -362,63 +253,27 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    {% for myteam in team %}
+                    <div class="col-lg-4 col-md-12">
                         <div class="card">
-                            <img src="{%static 'assets/boy@2x.png' %}" alt="team1" class="img-fluid rounded-circle w-50 mb-3">
-                            <h3 class="h3team">Bill Gates</h3>
-                            <h5 class="h5team">Content Writer</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, minus.</p>
+                            <img src={{myteam.pic.url}} alt="team1" class="img-fluid rounded-circle w-75 mb-3">
+                            <h3 class="h3team">{{myteam.title}}</h3>
+                            <h5 class="h5team">{{myteam.rank}}</h5>
+                            <p>{{myteam.desc}}</p>
                             <div class="d-flex flex-row justify-content-center">
                                 <div class="p-4">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href={{myteam.facebook}}><i class="fab fa-facebook"></i></a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href={{myteam.twitter}}><i class="fab fa-twitter"></i></a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href={{myteam.insta}}><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="{%static 'assets/girl@2x.png' %}" alt="" class="img-fluid w-50 mb-3">
-                            <h3 class="h3team">Steve Jobs</h3>
-                            <h5 class="h5team">SEO Expert</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, deleniti?</p>
-                            <div class="d-flex flex-row justify-content-center">
-                                <div class="p-4">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="{%static 'assets/man@2x.png' %}" alt="" class="img-fluid w-50 mb-3">
-                            <h3 class="h3team">Mark Zukerberg</h3>
-                            <h5 class="h5team">Marketing</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, deleniti?</p>
-                            <div class="d-flex flex-row justify-content-center">
-                                <div class="p-4">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </div>
-                                <div class="p-4">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -443,96 +298,36 @@
 
             <div class="container mt-5 mb-5">
                 <div class="owl-carousel owl-theme">
+                    {% for test in testimonials %}
                     <div class="item">
                         <div class="card">
-                            <img src="{%static 'assets/girl.jpg'%}" alt="" class="card-img-top">
+                            <img src={{test.pic.url}} alt="scroll-img" class="card-img-top rounded-circle center w-75">
                             <div class="card-body">
-                                <h5 class="card-title">Post Title 1</h5>
-                                <h5 class="card-title test-des">Description</h5>
+                                <h5 class="card-title">{{test.title}}</h5>
+                                <h5 class="card-title test-des">{{test.rank}}</h5>
                                 <p>
+                                    {% if test.star1 %}
                                     <i class="fa fa-star"></i>
+                                    {% endif %}
+                                    {% if test.star2 %}
                                     <i class="fa fa-star"></i>
+                                    {% endif %}
+                                    {% if test.star3 %}
                                     <i class="fa fa-star"></i>
+                                    {% endif %}
+                                    {% if test.star4 %}
                                     <i class="fa fa-star"></i>
+                                    {% endif %}
+                                    {% if test.star5 %}
                                     <i class="fa fa-star"></i>
+                                    {% endif %}
                                 </p>
                                 <hr>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, soluta.</p>
+                                <p>{{test.desc}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="card">
-                            <img src="{%static 'assets/portfolio1.png' %}" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Post Title 2</h5>
-                                <h5 class="card-title test-des">Description</h5>
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, soluta.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card">
-                            <img src="{%static 'assets/portfolio2.png'%}" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Post Title 3</h5>
-                                <h5 class="card-title test-des">Description</h5>
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, soluta.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card">
-                            <img src="{%static 'assets/portfolio3.jpg' %}" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Post Title 4</h5>
-                                <h5 class="card-title test-des">Description</h5>
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, soluta.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card">
-                            <img src="{%static 'assets/portfolio5.jpg' %}" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Post Title 5</h5>
-                                <h5 class="card-title test-des">Description</h5>
-                                <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </p>
-                                <hr>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, soluta.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

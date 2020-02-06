@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from .models import CommentForm, Portfolio, ContactForm, Newsletter, About
+from .models import CommentForm, Portfolio, ContactForm, Newsletter, About, testimonial, Tools, Services, OurTeam
 from django.core.files.storage import FileSystemStorage
 
 
@@ -22,11 +22,16 @@ def home(request):
         news = Newsletter(newsName=newsname, newsEmail=newsemail)
         news.save()
 
-# portfolio page data fetch
-# about page data fetch
+    # portfolio page data fetch
+    # about page data fetch
     ports = Portfolio.objects.all()
     aboutme = About.objects.all()
-    return render(request, 'index.html', {'ports': ports, 'aboutme': aboutme})
+    testimonials = testimonial.objects.all()
+    toolsbar = Tools.objects.all()
+    clientservices = Services.objects.all()
+    team = OurTeam.objects.all()
+    return render(request, 'index.html', {'ports': ports, 'aboutme': aboutme, 'testimonials': testimonials,
+                                          'toolsbar': toolsbar, 'clientservices': clientservices, 'team': team})
 
 
 def blog(request):

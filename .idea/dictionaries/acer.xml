@@ -4,6 +4,7 @@
       <w>aboutimg</w>
       <w>aboutme</w>
       <w>aboutwork</w>
+      <w>clientservices</w>
       <w>contactcomment</w>
       <w>contactemail</w>
       <w>contactform</w>
@@ -15,6 +16,7 @@
       <w>parabody</w>
       <w>parafoot</w>
       <w>toggler</w>
+      <w>toolsbar</w>
     </words>
   </dictionary>
 </component>

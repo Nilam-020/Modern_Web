@@ -5,11 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b449c164-dd42-46fe-a471-79b3e775e482" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/migrations/0010_blog_ourteam_services_testimonial_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/client1_1UqjK6C.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/client2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/client3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/client4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/client5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/man1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/team1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/team2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/team3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/client2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/team1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/team2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/team3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/acer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/acer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/client1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/client2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/client3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/girl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/man.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>

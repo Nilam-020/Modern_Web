@@ -1,7 +1,7 @@
 from typing import Tuple
 
 from django.contrib import admin
-from .models import ContactForm, Newsletter, Portfolio, About, Tools, testimonial, OurTeam
+from .models import ContactForm, Newsletter, Portfolio, About, Tools, testimonial, OurTeam, Services
 
 
 # Register your models here.
@@ -44,5 +44,6 @@ admin.site.register(ContactForm, ContactFormAdmin),
 admin.site.register(Newsletter, NewsletterAdmin),
 admin.site.register(Portfolio, PortfolioAdmin),
 admin.site.register(Tools, ToolsAdmin),
+admin.site.register(Services, ServicesAdmin)
 admin.site.register(OurTeam, OurTeamAdmin),
 admin.site.register(testimonial, testimonialAdmin)
