@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b449c164-dd42-46fe-a471-79b3e775e482" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +84,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="manage indentation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="434" y="32" key="CommitChangelistDialog2" timestamp="1580954068092">
+    <state x="434" y="32" key="CommitChangelistDialog2" timestamp="1580955892627">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="434" y="32" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1580954068092" />
+    <state x="434" y="32" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1580955892627" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1580793504001">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
