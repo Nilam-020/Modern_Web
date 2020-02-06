@@ -63,6 +63,14 @@
       <option name="presentableId" value="Default" />
       <updated>1580394768443</updated>
     </task>
+    <task id="LOCAL-00001" summary="manage indentation">
+      <created>1580954069523</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580954069523</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -71,12 +79,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="manage indentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="manage indentation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="434" y="32" key="CommitChangelistDialog2" timestamp="1580822712707">
+    <state x="434" y="32" key="CommitChangelistDialog2" timestamp="1580954068092">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="434" y="32" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1580822712707" />
+    <state x="434" y="32" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1580954068092" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1580793504001">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
