@@ -1,7 +1,8 @@
 from typing import Tuple
 
 from django.contrib import admin
-from .models import ContactForm, Newsletter, Portfolio, About, Tools, testimonial, OurTeam, Services
+from .models import ContactForm, Newsletter, Portfolio, About, Tools, testimonial, OurTeam, Services, category_detail, \
+    sidebar_author, post_category, ads
 
 
 # Register your models here.
@@ -38,6 +39,21 @@ class testimonialAdmin(admin.ModelAdmin):
     list_display = ('pic', 'title', 'rank', 'star1', 'star2','star3','star4','star5','desc')
 
 
+class categoryAdmin(admin.ModelAdmin):
+    list_display = ('img','heading','desc')
+
+
+class sidebarAdmin(admin.ModelAdmin):
+    list_display = ('img','name','post','facebook','twitter','github','linkedin','desc')
+
+
+class postAdmin(admin.ModelAdmin):
+    list_display = ('title','count')
+
+
+class adsAdmin(admin.ModelAdmin):
+    list_display = ['img']
+
 
 admin.site.register(About, AboutAdmin),
 admin.site.register(ContactForm, ContactFormAdmin),
@@ -46,4 +62,8 @@ admin.site.register(Portfolio, PortfolioAdmin),
 admin.site.register(Tools, ToolsAdmin),
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(OurTeam, OurTeamAdmin),
-admin.site.register(testimonial, testimonialAdmin)
+admin.site.register(testimonial, testimonialAdmin),
+admin.site.register(category_detail,categoryAdmin),
+admin.site.register(sidebar_author,sidebarAdmin),
+admin.site.register(post_category,postAdmin),
+admin.site.register(ads,adsAdmin)

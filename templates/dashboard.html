@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- favicon icon added in tap button -->
     <link rel="icon" href="{%static 'assets/wordonly.png'%}">
-    <title>Home</title>
+    <title>User Administrator</title>
 
     <!--bootstrap CSS file-->
     <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand ml-5" href="#" id="logo">DASHBOARD</a>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-            Open modal
+            Add Blog
         </button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon">
@@ -74,18 +74,14 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mr-1 mb-2">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">Comments</h4>
-                            <h1 class="card-title text-center">count</h1>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title text-center">Blog</h4>
-                            <h1 class="card-title text-center">count</h1>
+                            {% for b in blogdet %}
+                            <h1 class="card-title text-center">{{b.id}}</h1>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -94,151 +90,110 @@
 
         <!-- The Modal -->
         <div class="container-fluid">
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
+            <div class="modal w-100" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add Blog</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Blog</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form method="post">
-                            {% csrf_token %}
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                    <div class="form-group row">
+                                    <label for="topic" class="col-sm-2 col-form-label">Topic</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="topic" name="subject">
+                                    </div>
+                                </div>
                                 <div class="form-group row">
-                                <label for="topic" class="col-sm-2 col-form-label">Topic</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="topic" name="topic">
+                                    <label for="author" class="col-sm-2 col-form-label">Author</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="author" name="writer">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="author" class="col-sm-2 col-form-label">Author</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="author" name="author">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="facebook" class="col-sm-2 col-form-label">facebook link</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="facebook" name="facebook">
-                                </div>
-                            </div>
-                             <div class="form-group row">
-                                <label for="tweet" class="col-sm-2 col-form-label">twitter link</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="tweet" name="twitter">
-                                </div>
-                            </div>
-                             <div class="form-group row">
-                                <label for="github" class="col-sm-2 col-form-label">github link</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="github" name="github">
-                                </div>
-                            </div>
-                             <div class="form-group row">
-                                <label for="link" class="col-sm-2 col-form-label">linkedin link</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="link" name="linkedin">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticUpload" class="col-sm-4">Upload Image</label>
-                                <div class="col-sm-8">
-                                    <input type="file" class="form-control-file" id="staticUpload" name="bannerimg">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="title" class="col-sm-2 col-form-label">Title</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="title" name="title">
-                                </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="body" class="col-sm-2 col-form-label">Body 1</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="body" name="bodyhead">
+                                <div class="form-group row">
+                                    <label for="staticUpload" class="col-sm-4">Upload Image</label>
+                                    <div class="col-sm-8">
+                                        <input type="file" class="form-control-file" id="staticUpload" name="pic">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="boxed" class="col-sm-2 col-form-label">Boxed Text</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="boxed" name="quote">
+
+                                <div class="form-group row">
+                                    <label for="title" class="col-sm-2 col-form-label">Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" name="title">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticUpload2" class="col-sm-4">Upload Image 1</label>
-                                <div class="col-sm-8">
-                                    <input type="file" class="form-control-file" id="staticUpload2" name="imgright">
+
+                                <div class="form-group row">
+                                    <label for="body" class="col-sm-2 col-form-label">Para 1</label>
+                                    <div class="col-sm-10">
+                                        <textarea type="text" class="form-control" rows="3" id="body" name="desc"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticUpload3" class="col-sm-4">Upload Image 2</label>
-                                <div class="col-sm-8">
-                                    <input type="file" class="form-control-file" id="staticUpload3" name="imgleft">
+                        <div class="form-group row">
+                                    <label for="para" class="col-sm-2 col-form-label">Para 2</label>
+                                    <div class="col-sm-10">
+                                        <textarea type="text" class="form-control" rows="3" id="para" name="descfoot"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="Body2" class="col-sm-2 col-form-label">Body 2</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="Body2" name="bodyfoot">
+                                <div class="form-group row">
+                                    <label for="boxed" class="col-sm-2 col-form-label">Created Date</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="boxed" name="date">
+                                    </div>
                                 </div>
-                            </div>
-                             <button type="cancel" class="btn btn-primary">Cancel</button>
-                             <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
+                                 <button type="cancel" class="btn btn-primary">Cancel</button>
+                                 <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
         </div>
 
 <div class="container-fluid">
         <div class="row">
-    <div class="col-lg-12">
-        <div class="heading mb-5">
-            <h1>blogs</h1>
+            <div class="col-lg-12 jumbotron jumbotron-fluid text-center">
+                <div class="heading mb-5">
+                    <h1>blogs</h1>
+                </div>
+            </div>
         </div>
-        <table class="table table-bordered table-striped">
+        <div class="row">
+            <div class="col-lg-9 ml-5">
+                <table class="table table-bordered table-striped">
             <thead>
-            <tr>
-                <th>Author</th>
-                <th>Published Date</th>
-                <th>Facebook link</th>
-                <th>Twitter link</th>
-                <th>github link</th>
-                <th>linkedin link</th>
+            <tr class="text-center">
                 <th>Title</th>
-                <th>Heading</th>
-                <th>Body 1</th>
-                <th>Boxed Text</th>
-                <th>Image 1</th>
-                <th>Image 2</th>
-                <th>Body 2</th>
+                <th>Author</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Para Head</th>
+                <th>Para Foot</th>
+                <th>Date</th>
             </tr>
             </thead>
             <tbody>
             {% for bd in blogdet %}
             <tr>
-                <td>{{ bd.topic }}</td>
-                <td>{{ bd.author }}</td>
-                <td>{{ bd.facebook }}</td>
-                <td>{{ bd.twitter }}</td>
-                <td>{{ bd.github }}</td>
-                <td>{{ bd.linkedin }}</td>
-                <td>{{ bd.bannerimg }}</td>
-                <td>{{ bd.bodyhead }}</td>
-                <td>{{ bd.quote }}</td>
-                <td>{{ bd.imgright }}</td>
-                <td>{{ bd.imgleft }}</td>
-                <td>{{ bd.bodyfoot }}</td>
+                <td>{{ bd.subject }}</td>
+                <td>{{ bd.writer }}</td>
+                <td>{{ bd.date }}</td>
+                <td>{{ bd.pic }}</td>
+                <td>{{ bd.title }}</td>
+                <td>{{ bd.para1 }}</td>
+                <td>{{ bd.parafoot }}</td>
 
                 <td>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
 
                 </td>
                 <td>
@@ -249,12 +204,13 @@
             {% endfor %}
             </tbody>
         </table>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
     </div>
 </div>
-</div>
-    </div>
-
-
     <!--bootstrap jquery file-->
     <script src="{%static 'js/jquery.3.4.1.js'%}">
     </script>

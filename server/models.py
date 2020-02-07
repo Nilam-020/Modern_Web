@@ -66,15 +66,41 @@ class testimonial(models.Model):
     star5 = models.BooleanField()
     desc =models.TextField()
 
-class blog(models.Model):
+class blog_desc(models.Model):
     subject = models.CharField(max_length=50)
     writer = models.CharField(max_length=100)
-    view = models.CharField(max_length=5)
     date = models.DateField()
     pic = models.FileField(upload_to='pics')
     title = models.CharField(max_length=255)
     desc = models.TextField()
-    link = models.TextField()
+    descfoot = models.TextField()
+
+
+class category_detail(models.Model):
+    img = models.FileField(upload_to='pics')
+    heading = models.CharField(max_length=100)
+    desc = models.CharField(max_length=255)
+
+
+class sidebar_author(models.Model):
+    img = models.FileField(upload_to='pics')
+    name = models.CharField(max_length=100)
+    post = models.CharField(max_length=50)
+    facebook = models.TextField()
+    twitter = models.TextField()
+    github = models.TextField()
+    linkedin = models.TextField()
+    desc = models.TextField()
+
+
+class post_category(models.Model):
+    title = models.CharField(max_length=100)
+    count = models.IntegerField()
+
+
+class ads(models.Model):
+    img = models.FileField(upload_to='pics')
+
 
 class blog_detailsdesc(models.Model):
     topic =models.CharField(max_length=100)

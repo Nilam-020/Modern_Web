@@ -78,48 +78,22 @@
     <section class="blog_categorie_area">
         <div class="container">
             <div class="row">
+                {% for detail in category %}
                 <div class="col-lg-4">
                     <div class="categories_post">
-                        <img src={%static "assets/boy.jpg"%} alt="post">
+                        <img src={{detail.img.url}} alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
                                 <a href="../blog_details/">
-                                    <h5>Social Life</h5>
+                                    <h5>{{detail.heading}}</h5>
                                 </a>
                                 <div class="border_line"></div>
-                                <p>Enjoy your social life together</p>
+                                <p>{{detail.desc}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="categories_post">
-                        <img src="{%static 'assets/boy.jpg' %}" alt="post">
-                        <div class="categories_details">
-                            <div class="categories_text">
-                                <a href="../blog_details/">
-                                    <h5>Politics</h5>
-                                </a>
-                                <div class="border_line"></div>
-                                <p>Be a part of politics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="categories_post">
-                        <img src="{%static 'assets/boy.jpg' %}" alt="post">
-                        <div class="categories_details">
-                            <div class="categories_text">
-                                <a href="../blog_details/">
-                                    <h5>Food</h5>
-                                </a>
-                                <div class="border_line"></div>
-                                <p>Let the food be finished</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -129,156 +103,36 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
+                        {% for b in blogdet %}
                         <article class="row blog_item">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
-                                        <a {% if b.cat == 'Food' %} class="active" {% endif %} href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
+                                        <a {% if b.subject == 'Food' %} class="active" {% endif %}>Food,</a>
+                                         <a {% if b.subject == 'Technology' %} class="active" {% endif %}>Technology,</a>
+                                         <a {% if b.subject == 'Politics' %} class="active" {% endif %}>Politics,</a>
+                                         <a {% if b.subject == 'Lifestyle' %} class="active" {% endif %}>Lifestyle</a>
                                     </div>
                                     <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="far fa-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="far fa-calendar-alt"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="far fa-comment"></i></a></li>
+                                        <li><a href="#">{{b.writer}}<i class="far fa-user"></i></a></li>
+                                        <li><a href="#">{{b.date}}<i class="far fa-calendar-alt"></i></a></li>
+                                        <li><a href="#">{{b.id}} Views<i class="fas fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-9">
                                 <div class="blog_post">
-                                    <img src={%static "assets/blog/main-blog/m-blog-1.jpg"%} alt="">
+                                    <img src={{b.pic.url}} alt="">
                                     <div class="blog_details">
-                                        <a href="../blog_details/">
-                                            <h2>Astronomy Binoculars A Great Alternative</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                        <a href="../blog_details/" class="blog_btn">View More</a>
+                                            <h2>{{b.title}}</h2>
+
+                                        <p>{{b.desc}}</p>
+                                        <p>{{b.descfoot}}</p>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="far fa-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="far fa-calendar-alt"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="far fa-comment"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src={%static "assets/blog/main-blog/m-blog-2.jpg"%} alt="">
-                                    <div class="blog_details">
-                                        <a href="../blog_details/">
-                                            <h2>The Basics Of Buying A Telescope</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                        <a href="../blog_details/" class="blog_btn">View More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                            <li><a href="#">Mark wiens<i class="far fa-user"></i></a></li>
-                                            <li><a href="#">12 Dec, 2017<i class="far fa-calendar-alt"></i></a></li>
-                                            <li><a href="#">1.2M Views<i class="fas fa-eye"></i></a></li>
-                                            <li><a href="#">06 Comments<i class="far fa-comment"></i></a></li>
-                                        </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src={%static "assets/blog/main-blog/m-blog-3.jpg"%} alt="">
-                                    <div class="blog_details">
-                                        <a href="../blog_details/">
-                                            <h2>The Glossary Of Telescopes</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                        <a href="../blog_details/" class="blog_btn">View More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="far fa-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="far fa-calendar-alt"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="far fa-comment"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src={%static "assets/blog/main-blog/m-blog-4.jpg"%} alt="">
-                                    <div class="blog_details">
-                                        <a href="../blog_details/">
-                                            <h2>The Night Sky</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                        <a href="../blog_details/" class="blog_btn">View More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="row blog_item">
-                            <div class="col-md-3">
-                                <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="far fa-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="far fa-calendar-alt"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="far fa-comment"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
-                                    <img src={%static "assets/blog/main-blog/m-blog-5.jpg"%} alt="">
-                                    <div class="blog_details">
-                                        <a href="single-blog.html">
-                                            <h2>Telescopes 101</h2>
-                                        </a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                        <a href="../blog_details/" class="blog_btn">View More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        {% endfor %}
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
@@ -316,19 +170,21 @@
                             <!-- /input-group -->
                             <div class="br"></div>
                         </aside>
+                        {% for blogger in author %}
                         <aside class="single_sidebar_widget author_widget">
-                            <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
-                            <h4>Charlie Barber</h4>
-                            <p>Senior blog writer</p>
+                            <img class="author_img rounded-circle" src={{blogger.img.url}} alt="">
+                            <h4>{{blogger.name}}</h4>
+                            <p>{{blogger.post}}</p>
                             <div class="social_icon">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href={{blogger.facebook}}><i class="fab fa-facebook-f"></i></a>
+                                <a href={{blogger.twitter}}><i class="fab fa-twitter"></i></a>
+                                <a href={{blogger.github}}><i class="fab fa-github"></i></a>
+                                <a href={{blogger.linkedin}}><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                            <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                            <p>{{blogger.desc}}</p>
                             <div class="br"></div>
                         </aside>
+                        {% endfor %}
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Popular Posts</h3>
                             <div class="media post_item">
@@ -370,33 +226,25 @@
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="img-fluid" src="/static/assets/blog/add.jpg" alt=""></a>
+                            {% for ads in ad %}
+                            <a href="#"><img class="img-fluid mb-3" src={{ad.img.url}} alt=""></a>
+                            {% endfor %}
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title">Post Catgories</h4>
                             <ul class="list cat-list">
+                                {% for posts in post %}
+                                <li>
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <p>{{posts.title}}</p>
+                                        <p>{{posts.count}}</p>
+                                    </a>
+                                </li>
+                                {% endfor %}
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
                                         <p>Technology</p>
-                                        <p>37</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Lifestyle</p>
-                                        <p>24</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Fashion</p>
-                                        <p>59</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Art</p>
                                         <p>29</p>
                                     </a>
                                 </li>
@@ -406,38 +254,20 @@
                                         <p>15</p>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Architecture</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Adventure</p>
-                                        <p>44</p>
-                                    </a>
-                                </li>
                             </ul>
                             <div class="br"></div>
                         </aside>
+
                         <aside class="single-sidebar-widget tag_cloud_widget">
                             <h4 class="widget_title">Tag Clouds</h4>
                             <ul class="list">
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Architecture</a></li>
-                                <li><a href="#">Fashion</a></li>
                                 <li><a href="#">Food</a></li>
                                 <li><a href="#">Technology</a></li>
+                                <li><a href="#">Politics</a></li>
                                 <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Art</a></li>
-                                <li><a href="#">Adventure</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Adventure</a></li>
                             </ul>
                         </aside>
+
                     </div>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
@@ -5,7 +7,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from .models import CommentForm, Portfolio, ContactForm, Newsletter, About, testimonial, Tools, Services, OurTeam, \
-    blog_detailsdesc
+    blog_detailsdesc, blog_desc, sidebar_author, category_detail, ads, post_category
 from django.core.files.storage import FileSystemStorage
 
 
@@ -38,7 +40,13 @@ def home(request):
 
 
 def blog(request):
-    return render(request, 'blog.html')
+    blogdet = blog_desc.objects.all()
+    author = sidebar_author.objects.all()
+    category = category_detail.objects.all()
+    post = post_category.objects.all()
+    ad = ads.objects.all()
+
+    return render(request, 'blog.html', {'blogdet': blogdet,'author':author,'category':category,'post':post,'ad':ad})
 
 
 def blog_details(request):
@@ -79,24 +87,16 @@ def logout(request):
 @login_required
 def dashboard(request):
     if request.method == "POST":
-        topic1 = request.POST['topic']
-        author1 = request.POST['author']
-        facebook1 = request.POST['facebook']
-        twitter1 = request.POST['twitter']
-        github1 = request.POST['github']
-        linkedin1 = request.POST['linkedin']
-        bannerimg1 = request.POST['bannerimg']
-        bodyhead1 = request.POST['bodyhead']
-        quote1 = request.POST['quote']
-        imgright1 = request.POST['imgright']
-        imgleft1 = request.POST['imgleft']
-        bodyfoot1 = request.POST['bodyfoot']
-
-        blogdesc = blog_detailsdesc(topic=topic1, author=author1, facebook=facebook1,
-                                    twitter=twitter1, github=github1, linkedin=linkedin1, bannerimg=bannerimg1,
-                                    bodyhead=bodyhead1, quote=quote1, imgright=imgright1, imgleft=imgleft1,
-                                    bodyfoot=bodyfoot1)
+        subject = request.POST['subject']
+        writer = request.POST['writer']
+        date = datetime.now()
+        pic = request.POST['pic']
+        title = request.POST['title']
+        desc = request.POST['desc']
+        descfoot = request.POST['descfoot']
+        blogdesc = blog_desc(subject=subject, writer=writer, date=date,
+                             pic=pic, title=title, desc=desc, descfoot=descfoot)
         blogdesc.save()
 
-    blogdet = blog_detailsdesc.objects.all()
-    return render(request, 'dashboard.html',{'blogdet': blogdet})
+    blogdet = blog_desc.objects.all()
+    return render(request, 'dashboard.html', {'blogdet': blogdet})
