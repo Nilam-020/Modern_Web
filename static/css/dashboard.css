@@ -39,3 +39,26 @@ body {
 .main {
     margin-top: 100px;
 }
+.title {
+background: blue;
+color: white;
+padding: 20px 0 20px 0 !important;
+}
+.tablehead th{
+background-color: #007bff !important;
+color: #ffffff;
+}
+.modal{
+    transition: all 0.3s;
+    box-shadow: 0 10px 50px rgba(20, 50, 47, 0.10), 0 10px 40px rgba(0, 0, 0, 0.10);
+}
+.modal-body{
+background-color: #007bbf !important;
+}
+.modal-header{
+background-color: blue !important;
+color: white;
+}
+.row label{
+color: white;
+}

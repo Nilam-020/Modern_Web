@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b449c164-dd42-46fe-a471-79b3e775e482" name="Default Changelist" comment="manage indentation">
+      <change afterPath="$PROJECT_DIR$/media/m-blog-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-2_ITNYQaS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-2_jP7pfcl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-3_CbI6hQd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-3_Nl1Khuv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-3_uG9x8bD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-3_vDsUIPs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/m-blog-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/m-blog-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/m-blog-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/m-blog-3_VTQ3rJX.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/m-blog-3_VVg1Zx6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/pics/m-blog-3_kPylN7u.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/migrations/0018_blog_desc_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webproject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +56,12 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web\static\css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web\static\css" />
       <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Softwarica\Semester 3\assignment\Modern_Web\static\css" />
     </key>
   </component>
   <component name="ServiceViewManager">

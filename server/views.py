@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -39,13 +40,31 @@ def home(request):
 
 
 def blog(request):
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        username = request.POST['username']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'Username taken')
+            else:
+                user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username,
+                                                password=password1, email=email)
+                user.save()
+                messages.info(request, 'User created')
+                return redirect('../login')
+
     blogdet = blog_desc.objects.all()
     author = sidebar_author.objects.all()
     category = category_detail.objects.all()
     post = post_category.objects.all()
     ad = ads.objects.all()
 
-    return render(request, 'blog.html', {'blogdet': blogdet,'author':author,'category':category,'post':post,'ad':ad})
+    return render(request, 'blog.html',
+                      {'blogdet': blogdet, 'author': author, 'category': category, 'post': post, 'ad': ad})
 
 
 def blog_details(request):
@@ -87,6 +106,7 @@ def logout(request):
 def dashboard(request):
     if request.method == "POST":
         if request.POST.get("ud"):
+            user = request.user
             subject = request.POST['subject']
             writer = request.POST['writer']
             date = datetime.now()
@@ -96,15 +116,12 @@ def dashboard(request):
             descfoot = request.POST['descfoot']
             fs = FileSystemStorage()
             fs.save(pic.name, pic)
-            blogdesc = blog_desc(subject=subject, writer=writer, date=date,
+            blogdesc = blog_desc(user=user,subject=subject, writer=writer, date=date,
                                  pic=pic.name, title=title, desc=desc, descfoot=descfoot)
             blogdesc.save()
-
-
-
         else:
             pid = request.POST['id']
-            obj=blog_desc.objects.get(id=pid)
+            obj = blog_desc.objects.get(id=pid)
 
             obj.subject = request.POST['subject']
             obj.writer = request.POST['writer']
@@ -117,21 +134,16 @@ def dashboard(request):
             obj.fs.save(obj.pic.name, obj.pic)
             obj.save()
 
-
-
-
-
             # blogdesc = blog_desc(subject=subject, writer=writer, date=date,
             #                      pic=pic.name, title=title, desc=desc, descfoot=descfoot)
             # blogdesc.save()
 
-
-    blogdet = blog_desc.objects.all()
+    blogdet = blog_desc.objects.filter(user=request.user)
     return render(request, 'dashboard.html', {'blogdet': blogdet})
 
-def delete(request,pid):
-    obj=blog_desc.objects.get(id=pid)
-    obj.delete()
-    obje=blog_desc.objects.all()
-    return render(request,'dashboard.html',{"blogdet":obje})
 
+def delete(request, pid):
+    obj = blog_desc.objects.get(id=pid)
+    obj.delete()
+    obje = blog_desc.objects.filter(user=request.user)
+    return render(request, 'dashboard.html', {"blogdet": obje})

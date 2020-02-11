@@ -116,7 +116,7 @@
                                     <ul class="blog_meta list">
                                         <li><a href="#">{{b.writer}}<i class="far fa-user"></i></a></li>
                                         <li><a href="#">{{b.date}}<i class="far fa-calendar-alt"></i></a></li>
-                                        <li><a href="#">{{b.id}} Views<i class="fas fa-eye"></i></a></li>
+<!--                                        <li><a href="#">{{b.id}} Views<i class="fas fa-eye"></i></a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -133,38 +133,17 @@
                             </div>
                         </article>
                         {% endfor %}
-                        <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <span aria-hidden="true">
-                                            <span class="fas fa-chevron-left"></span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a href="#" class="page-link">01</a></li>
-                                <li class="page-item"><a href="#" class="page-link">02</a></li>
-                                <li class="page-item"><a href="#" class="page-link">03</a></li>
-                                <li class="page-item"><a href="#" class="page-link">04</a></li>
-                                <li class="page-item"><a href="#" class="page-link">09</a></li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <span aria-hidden="true">
-                                            <span class="fas fa-chevron-right"></span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget search_widget">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Posts">
+                               <h2>Sign up to Register</h2>
+                            </div>
+                            <div class="input-group">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="fas fa-search"></i></button>
+                                    <input type="button" class="btn btn-default signup" value="Sign Up" data-toggle="modal" data-target="#myModal"/>
                                 </span>
                             </div>
                             <!-- /input-group -->
@@ -188,7 +167,7 @@
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Popular Posts</h3>
                             <div class="media post_item">
-                                <img src={%static "assets/blog/popular-post/post1.jpg"%} alt="post">
+                                <img src="{%static 'assets/blog/popular-post/post1.jpg' %}" alt="post">
                                 <div class="media-body">
                                     <a href="blog-details.html">
                                         <h3>Space The Final Frontier</h3>
@@ -206,7 +185,7 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src={%static "assets/blog/popular-post/post3.jpg"%} alt="post">
+                                <img src="{%static 'assets/blog/popular-post/post3.jpg' %}" alt="post">
                                 <div class="media-body">
                                     <a href="../blog_details/">
                                         <h3>Astronomy Or Astrology</h3>
@@ -215,7 +194,7 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src={%static "assets/blog/popular-post/post4.jpg"%} alt="post">
+                                <img src="{%static 'assets/blog/popular-post/post4.jpg' %}" alt="post">
                                 <div class="media-body">
                                     <a href="../blog_details/">
                                         <h3>Asteroids telescope</h3>
@@ -273,8 +252,66 @@
             </div>
         </div>
     </section>
+   <div class="container-fluid">
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content registration">
 
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Blog</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
 
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-group row">
+                                    <label for="first_name" class="col-sm-2 col-form-label">First Name:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="first_name">
+                                    </div>
+                                </div>
+                                    <div class="form-group row">
+                                    <label for="topic" class="col-sm-2 col-form-label">Last Name: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="last_name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="username" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"  name="username">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control"  name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="password1">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password2" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="password2">
+                                    </div>
+                                </div>
+                                 <button data-dismiss="modal" class="btn btn-danger close">Cancel</button>
+                                 <button type="submit" class="btn btn-success">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     <!--============= blog category area=============== -->
 
 

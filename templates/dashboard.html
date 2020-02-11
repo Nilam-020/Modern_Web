@@ -23,14 +23,14 @@
     <link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css'%}">
 
     <!--Custom CSS file-->
-    <link rel="stylesheet" href="{%static 'css/dashboard.css'%}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand ml-5" href="#" id="logo">DASHBOARD</a>
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
             Add Blog
         </button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -44,9 +44,6 @@
                 <li class="nav-item">
 
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">Contact</a>
-                </li>
                 <li class="nav-item dropdown">
                     {% if user.is_authenticated %}
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Welcome
@@ -54,7 +51,6 @@
                     </a>
                     {% endif %}
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user 2x"></i> &nbsp;Profile</a>
                         <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                     </div>
                 </li>
@@ -62,32 +58,6 @@
         </div>
     </nav>
     <div class="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-3 col-sm-6 mr-1 mb-2">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">Views</h4>
-                            <h1 class="card-title text-center">count</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 mr-1 mb-2">
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">Blog</h4>
-                            {% for b in blogdet %}
-                            <h1 class="card-title text-center">{{b.id}}</h1>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- The Modal -->
         <div class="container-fluid">
             <div class="modal w-100" id="myModal">
@@ -97,7 +67,7 @@
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Add Blog</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
                         </div>
 
                         <!-- Modal body -->
@@ -149,8 +119,8 @@
                                         <input type="date" class="form-control" id="boxed" name="date">
                                     </div>
                                 </div>
-                                 <button type="cancel" class="btn btn-primary">Cancel</button>
-                                 <input type="submit" value="Save" class="btn btn-primary" name="ud">
+                                 <button class="close btn btn-danger" data-dismiss="modal">Cancel</button>
+                                 <input type="submit" value="Save" class="btn btn-success" name="ud">
                             </form>
                         </div>
                     </div>
@@ -161,17 +131,18 @@
 
 <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 jumbotron jumbotron-fluid text-center">
-                <div class="heading mb-5">
+            <div class="col-lg-12 jumbotron jumbotron-fluid text-center title">
+                <div class="heading">
                     <h1>blogs</h1>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-9 ml-5">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
                 <table class="table table-bordered table-striped">
             <thead>
-            <tr class="text-center">
+            <tr class="text-center tablehead">
                 <th>Title</th>
                 <th>Author</th>
                 <th>Image</th>
@@ -194,11 +165,11 @@
                 <td>{{ bd.parafoot }}</td>
 
                 <td>
-                    <a href="#" data-toggle="modal" data-target="#edit{{ bd.id }}" class="btn btn-primary">Edit</a>
+                    <a href="#" data-toggle="modal" data-target="#edit{{ bd.id }}" class="btn btn-success">Edit</a>
 
                 </td>
                 <td>
-                    <a href="/delete/{{ bd.id }}"  class="btn btn-primary">Delete</a>
+                    <a href="/delete/{{ bd.id }}"  class="btn btn-danger">Delete</a>
 
                 </td>
             </tr>
@@ -239,7 +210,7 @@
                                 <div class="form-group row">
                                     <label for="staticUpload" class="col-sm-4">Upload Image</label>
                                     <div class="col-sm-8">
-                                        <input type="file" class="form-control-file" value="{{ bd.pic }}"id="staticUpload1" name="pic">
+                                        <input type="file" class="form-control-file" value="{{ bd.pic.url }}"id="staticUpload1" name="pic">
                                     </div>
                                 </div>
 
@@ -253,23 +224,23 @@
                                 <div class="form-group row">
                                     <label for="body" class="col-sm-2 col-form-label">Para 1</label>
                                     <div class="col-sm-10">
-                                        <textarea type="text" class="form-control" value="{{ bd.desc }}"rows="3" id="body1" name="desc"></textarea>
+                                        <textarea type="text" class="form-control" rows="3" id="body1" name="desc">{{ bd.desc }}</textarea>
                                     </div>
                                 </div>
                         <div class="form-group row">
                                     <label for="para" class="col-sm-2 col-form-label">Para 2</label>
                                     <div class="col-sm-10">
-                                        <textarea type="text" class="form-control" value="{{ bd.descfoot }}" rows="3" id="para1" name="descfoot"></textarea>
+                                        <textarea type="text" class="form-control" rows="3" id="para1" name="descfoot">{{ bd.descfoot }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="boxed" class="col-sm-2 col-form-label">Created Date</label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" value="{{ bd.date }}" id="boxed1" name="date">
+                                        <input type="text" class="form-control" value="{{ bd.date }}" id="boxed1" name="date">
                                     </div>
                                 </div>
-                                 <button type="cancel" class="btn btn-primary">Cancel</button>
-                                 <button type="submit" class="btn btn-primary">Update</button>
+                                 <button data-dismiss="modal" class="btn btn-danger close">Cancel</button>
+                                 <button type="submit" class="btn btn-success">Update</button>
                             </form>
                         </div>
                     </div>
@@ -281,7 +252,7 @@
             </tbody>
         </table>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-1">
 
             </div>
         </div>

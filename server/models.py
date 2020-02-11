@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -66,7 +67,9 @@ class testimonial(models.Model):
     star5 = models.BooleanField()
     desc =models.TextField()
 
+
 class blog_desc(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=1)
     subject = models.CharField(max_length=50)
     writer = models.CharField(max_length=100)
     date = models.DateField()
