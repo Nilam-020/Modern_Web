@@ -67,18 +67,6 @@ def blog(request):
                       {'blogdet': blogdet, 'author': author, 'category': category, 'post': post, 'ad': ad})
 
 
-def blog_details(request):
-    # if request.method == 'POST':
-    #     name = request.POST['blogName']
-    #     email = request.POST['blogEmail']
-    #     subject = request.POST['blogSubject']
-    #     comment = request.POST['blogMessage']
-    #     db = CommentForm(blogName=name, blogEmail=email, blogSubject=subject, blogMessage=comment)
-    #     db.save()
-
-    return render(request, 'blog_details.html')
-
-
 def login(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -133,11 +121,6 @@ def dashboard(request):
             obj.fs = FileSystemStorage()
             obj.fs.save(obj.pic.name, obj.pic)
             obj.save()
-
-            # blogdesc = blog_desc(subject=subject, writer=writer, date=date,
-            #                      pic=pic.name, title=title, desc=desc, descfoot=descfoot)
-            # blogdesc.save()
-
     blogdet = blog_desc.objects.filter(user=request.user)
     return render(request, 'dashboard.html', {'blogdet': blogdet})
 
