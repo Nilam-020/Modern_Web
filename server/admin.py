@@ -1,11 +1,9 @@
-from typing import Tuple
-
 from django.contrib import admin
 from .models import ContactForm, Newsletter, Portfolio, About, Tools, testimonial, OurTeam, Services, category_detail, \
     sidebar_author, post_category, ads
 
 
-# Register your models here.
+# Model registration for django administration
 
 class ContactFormAdmin(admin.ModelAdmin):
     list_display = ('conName', 'conEmail', 'conComment')
